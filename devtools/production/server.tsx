@@ -59,9 +59,7 @@ app.use((req, res) => {
   store.close();
 });
 
-if (port) {
-  server.listen(port, () => {
-    
+server.listen(port, () => {    
 
     if (process.env.NODE_ENV === 'production') {
       console.info(
@@ -69,6 +67,3 @@ if (port) {
       );
     }
   });
-} else {
-  console.error('ERROR: No PORT environment variable has been specified');
-}
